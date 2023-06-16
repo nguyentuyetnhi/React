@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Main from './Component/MainComponent';
-
+import Menu from './Component/MenuComponent';
+import { DISHES } from './shared/dishes';
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class App extends Component {
 
       <div className="App">
         <Main />
-    
+  <Menu/>
       </div>
      
     );
