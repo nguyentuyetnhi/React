@@ -1,9 +1,17 @@
-import React from 'react';
-import { Card, CardImg, CardImgOverlay, CardBody, CardTitle, CardText, Breadcrumb, BreadcrumbItem } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import React from "react";
+import {
+  Card,
+  CardImg,
+  CardBody,
+  CardImgOverlay,
+  CardTitle,
+  Breadcrumb,
+  BreadcrumbItem,
+} from "reactstrap";
+import { Link } from "react-router-dom";
 
 function RenderDish({ dish }) {
-  if (dish != null) {
+  if (dish != null)
     return (
       <Card>
         <CardImg width="100%" src={dish.image} alt={dish.name} />
@@ -13,7 +21,7 @@ function RenderDish({ dish }) {
         </CardImgOverlay>
       </Card>
     );
-  } else {
+  else {
     return <div></div>;
   }
 }
@@ -27,10 +35,10 @@ function RenderComments({ comments }) {
             <p>{comment.comment}</p>
             <p>
               -- {comment.author}, &nbsp;
-              {new Intl.DateTimeFormat('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: '2-digit'
+              {new Intl.DateTimeFormat("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "2-digit",
               }).format(new Date(Date.parse(comment.date)))}
             </p>
           </li>
@@ -39,7 +47,7 @@ function RenderComments({ comments }) {
     });
     return (
       <div>
-        <h4>Comments</h4>
+        <h4> Comments </h4>
         <ul>{comment}</ul>
       </div>
     );
@@ -55,6 +63,7 @@ const DishDetail = (props) => {
   if (dish == null) {
     return <div></div>;
   }
+
   return (
     <div className="container">
       <div className="row">
